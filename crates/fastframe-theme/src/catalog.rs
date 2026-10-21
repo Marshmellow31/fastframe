@@ -648,7 +648,7 @@ mod tests {
             &Waker::default(),
         );
         wait(&mut catalog);
-        assert_eq!(catalog.themes().len(), 8);
+        assert_eq!(catalog.themes().len(), 9);
         let nord = catalog.find("Nord.json").unwrap();
         assert!(!nord.palette.dark);
         assert_eq!(
