@@ -194,8 +194,10 @@ mod tests {
         assert!(!contains("omarchy.json"));
     }
 
+    /// Checks the preset's black backgrounds and readable text and control colours.
     #[test]
     fn pure_black_keeps_black_backgrounds_and_readable_content() {
+        /// Returns WCAG relative luminance after linearizing the sRGB channels.
         fn luminance(color: egui::Color32) -> f64 {
             let linear = [color.r(), color.g(), color.b()].map(|channel| {
                 let value = f64::from(channel) / 255.0;
